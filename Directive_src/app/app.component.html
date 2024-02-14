@@ -1,0 +1,49 @@
+<h1>Demonstration of Structural Directives</h1>
+
+<h1>Demonstration of ngIf</h1>
+
+<h2 *ngIf = "nonveg">You selected non veg menu</h2>
+
+<div *ngIf = "nonveg ; then ifblock ; else elseblock"></div>
+
+<ng-template #ifblock>
+  <h2> Please consider below nonveg menu options</h2>
+  <h3> Chiken Tikka</h3>
+  <h3> Butter Chiken</h3>
+  <h3> Chiken Biryani</h3>
+</ng-template>
+
+<ng-template #elseblock>
+  <h2> Please consider below veg menu options</h2>
+  <h3> Dal Makhani</h3>
+  <h3> Dal tadaka</h3>
+  <h3> Veg Biryani</h3>
+</ng-template>
+
+<h1>Demonstration of ngFor</h1>
+
+
+<div *ngFor = "let value of Technology">
+  <h2>{{value}}</h2>
+</div>
+
+<h1>Demonstration of ngSwitch</h1>
+
+<div [ngSwitch] = "Batch">
+  <div *ngSwitchCase = "'PPA'">
+    <h2>You selected PPA batch</h2>
+  </div>
+  <div *ngSwitchCase = "'LB'">
+    <h2>You selected LB batch</h2>
+  </div>
+  <div *ngSwitchCase = "'Python'">
+    <h2>You selected Python batch</h2>
+  </div>
+  <div *ngSwitchDefault>
+    <h2>You selected a wring option</h2>
+  </div>
+
+</div>
+  
+
+<router-outlet></router-outlet>
